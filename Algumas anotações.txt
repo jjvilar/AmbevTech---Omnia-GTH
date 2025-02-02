@@ -1,3 +1,6 @@
+//Código de Cadastro de Usuário com dados fixos
+===========================================================================
+
 require('cypress-xpath');
 
 
@@ -27,7 +30,10 @@ describe('Cadastrar Usuário Teste Test Suite', () => {
     
 })
 
-=======================================
+===========================================================================
+//Código de Cadastro de Usuário com dados aleatórios
+===========================================================================
+
 
 function generateRandomUser() {
     const randomString = Math.random().toString(36).substring(2, 10);
@@ -62,19 +68,59 @@ describe('Cadastrar Usuário Teste Test Suite', () => {
     });
 });
 
-=====================================
+===========================================================================
+    Subindo o Projeto no GitHub
+===========================================================================
 
+# Para incializar e subir o Projeto no GitHub
 git remote add origin https://github.com/jjvilar/AmbevTech---Omnia-GTH.git
 git branch -M main
 git push -u origin main
 
-
+--------------------------------------
+# Se houver algun conflito faça:
 # Forçar o push (use com cuidado)
 git push -f origin main
 
 # Ou fazer um pull e resolver conflitos
 git pull origin main --rebase
+---------------------------------------
+
 # Resolva os conflitos, se houver
 git add .
-git commit -m "Resolve merge conflicts"
+git commit -m "Resolvendo conflitos de merge "
 git push origin main
+
+===========================================================================
+    Subindo atualizações
+===========================================================================
+
+# Verificar se há alterações locais não commitadas
+git status
+
+# Commitar alterações locais (se houver)
+git add .
+git commit -m "Sua mensagem de commit"
+
+# Buscar atualizações do repositório remoto
+git fetch
+
+# Verificar o status em relação ao repositório remoto
+git status
+
+# Verificar o log de commits que estão no remoto e não no local
+git log HEAD..origin/main --oneline
+
+# Atualizar o repositório local com as mudanças do remoto
+git pull origin main --rebase
+
+# Resolver conflitos (se houver)
+# Resolva os conflitos manualmente, depois:
+git add .
+git commit -m "Resolve merge conflicts"
+
+# Enviar suas mudanças para o repositório remoto
+git push origin main
+
+
+
