@@ -14,6 +14,7 @@ describe.only('Cadastrar Usuário Teste Test Suite', () => {
     });
 
     it('Clica no botão Cadastre-se e depois Cadastrar', () => {
+        //Gerar um usuário aleatório
         const user = generateRandomUser();
 
         // Clica no botão Cadastre-se
@@ -29,7 +30,6 @@ describe.only('Cadastrar Usuário Teste Test Suite', () => {
         // Verifica se o usuário foi cadastrado com sucesso
         cy.wait(2500);
         cy.xpath("//p[@class='lead'][contains(.,'Este é seu sistema para administrar seu ecommerce.')]").should('contain', 'Este é seu sistema para administrar seu ecommerce.');
-        
 
         // Sai do sistema
         cy.wait(2500);

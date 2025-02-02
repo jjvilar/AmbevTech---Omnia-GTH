@@ -4,14 +4,17 @@
   "description": "testes E2E automatizados",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "cypress:open": "cypress open",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "juliano vilar",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^14.0.1"
+    "cypress": "^14.0.1",
+    "cypress-file-upload": "^5.0.8"
   },
   "dependencies": {
     "cypress-xpath": "^2.0.1"
   }
+  
 }
