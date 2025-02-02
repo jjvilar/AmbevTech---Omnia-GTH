@@ -1,0 +1,80 @@
+require('cypress-xpath');
+
+
+describe('Cadastrar Usuário Teste Test Suite', () => {
+    beforeEach(() => {
+        cy.visit('https://front.serverest.dev/login');
+    });
+
+    it('Clica no botão Cadastre-se e depois Cadastrar', () => {
+        cy.xpath("//a[contains(text(),'Cadastre-se')]").click();
+
+        //Entra com os dados do usuário
+        cy.xpath('//input[@id="nome"]').type('Usuário Teste');
+        cy.xpath('//input[@id="email"]').type('usuarioteste@teste.com.br');
+        cy.xpath('//input[@id="password"]').type('teste123');
+        cy.xpath('//input[@id="administrador"]').click();
+        cy.xpath("//button[contains(text(),'Cadastrar')]").click();
+
+        //Verifica se o usuário foi cadastrado com sucesso
+        cy.xpath('//font[contains(text(),"Bem Vindo")]').should('contain', 'Login');
+
+        //Sai do sistema
+        cy.xpath("//font[contains(text(),'Sair')]").click();
+
+       
+    });
+    
+})
+
+=======================================
+
+function generateRandomUser() {
+    const randomString = Math.random().toString(36).substring(2, 10);
+    const name = `User_${randomString}`;
+    const email = `user_${randomString}@test.com`;
+    const password = `pass_${randomString}`;
+    return { name, email, password };
+}
+
+describe('Cadastrar Usuário Teste Test Suite', () => {
+    beforeEach(() => {
+        cy.visit('https://front.serverest.dev/login');
+    });
+
+    it('Clica no botão Cadastre-se e depois Cadastrar', () => {
+        const user = generateRandomUser();
+
+        cy.xpath("//a[contains(text(),'Cadastre-se')]").click();
+
+        // Entra com os dados do usuário
+        cy.xpath('//input[@id="nome"]').type(user.name);
+        cy.xpath('//input[@id="email"]').type(user.email);
+        cy.xpath('//input[@id="password"]').type(user.password);
+        cy.xpath('//input[@id="administrador"]').click();
+        cy.xpath("//button[contains(text(),'Cadastrar')]").click();
+
+        // Verifica se o usuário foi cadastrado com sucesso
+        cy.xpath('//font[contains(text(),"Bem Vindo")]').should('contain', 'Login');
+
+        // Sai do sistema
+        cy.xpath("//font[contains(text(),'Sair')]").click();
+    });
+});
+
+=====================================
+
+git remote add origin https://github.com/jjvilar/AmbevTech---Omnia-GTH.git
+git branch -M main
+git push -u origin main
+
+
+# Forçar o push (use com cuidado)
+git push -f origin main
+
+# Ou fazer um pull e resolver conflitos
+git pull origin main --rebase
+# Resolva os conflitos, se houver
+git add .
+git commit -m "Resolve merge conflicts"
+git push origin main
