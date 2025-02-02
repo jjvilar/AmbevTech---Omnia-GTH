@@ -1,0 +1,17 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "testes E2E automatizados",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "juliano vilar",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^14.0.1"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1"
+  }
+}
