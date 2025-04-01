@@ -1,3 +1,7 @@
+/// <reference types="cypress" />
+
+import { describe, it } from "mocha";
+
 describe('File Upload', () => {
     it('One file', () => {
         const fixtureFile = 'exemplo.pdf';
