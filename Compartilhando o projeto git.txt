@@ -1,0 +1,44 @@
+Para compartilhar seu projeto no GitHub, siga os passos abaixo:
+
+1. **Crie um repositório no GitHub:**
+   - Vá para [GitHub](https://github.com) e faça login.
+   - Clique no botão `+` no canto superior direito e selecione `New repository`.
+   - Preencha o nome do repositório e outras informações necessárias, depois clique em `Create repository`.
+
+2. **Inicialize um repositório Git localmente (se ainda não tiver feito):**
+   - Abra o terminal no diretório do seu projeto.
+   - Execute os seguintes comandos:
+
+   ```sh
+   git init
+   git add .
+   git commit -m "Initial commit"
+   ```
+
+3. **Adicione o repositório remoto e envie os arquivos:**
+   - No terminal, execute os seguintes comandos, substituindo `<username>` pelo seu nome de usuário do GitHub e `<repository>` pelo nome do repositório que você criou:
+
+   ```sh
+   git remote add origin https://github.com/<username>/<repository>.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+4. **Compartilhe o link do repositório:**
+   - Depois de enviar os arquivos, você pode compartilhar o link do repositório com outras pessoas. O link será algo como `https://github.com/<username>/<repository>`.
+
+Aqui está um exemplo completo:
+
+```sh
+# Inicialize o repositório Git localmente (se ainda não tiver feito)
+git init
+git add .
+git commit -m "Initial commit"
+
+# Adicione o repositório remoto e envie os arquivos
+git remote add origin https://github.com/<username>/<repository>.git
+git branch -M main
+git push -u origin main
+```
+
+Depois de seguir esses passos, seu projeto estará disponível no GitHub e você poderá compartilhar o link do repositório com outras pessoas.
